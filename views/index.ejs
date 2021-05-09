@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #7a0d13;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button{
+  width: 100%;
+  background-color: #7a0d13;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #7a0d13;
+}
+
+input[type=button]:hover {
+  background-color: #7a0d13;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Event Management</h3>
+
+<div>
+  <form action="/event/addEvent" method="POST">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Your name.."required>
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" placeholder="Your last name.."required>
+
+    <label for="venue">Venue</label>
+    <input type="text" id="venue" name="venue" placeholder="Enter your address.."required>
+
+    <label for="birthday">Event Date:</label>
+    <input type="date" id="birthday" name="eventdate"required><br></br>
+
+    <label for="Event">Event Type</label>
+    <input type="text" id="eventtype" name="eventtype" placeholder="Enter your event type.."required>
+  
+    <input type="submit" value="Submit"><br></br>
+    <input type="button" onclick="update()" class="button" value="Update"><br></br>
+    <input type="button" onclick="deleteEvent()" class="button" value="Delete">
+  
+  </form>
+</div>
+<script>
+  function update(){
+    location.replace("http://localhost:5000/event/eventupdate")
+  }
+  function deleteEvent(){
+    location.replace("http://localhost:5000/event/eventdelete")
+  }
+</script>
+
+</body>
+</html>
